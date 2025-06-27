@@ -65,7 +65,7 @@ const PowerBIDashboard = () => {
         </div>
         <div>
           <h1 className="text-2xl font-bold" style={{ color: "#133020" }}>
-            Analytics Hub
+            Analytics
           </h1>
           <p className="text-amber-700 font-medium">Lifewood • BYU Partnership</p>
         </div>

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Lifewood + BYU Analytics Platform",
+  title: "Lifewood Analytics",
   description: "Real-time Business Intelligence & Data Visualization Dashboard",
 };
 
