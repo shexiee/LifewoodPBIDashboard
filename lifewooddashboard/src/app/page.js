@@ -5,12 +5,9 @@ import {
   Database,
   Users,
   Leaf,
-  GraduationCap,
   Expand,
   AlertTriangle,
   BarChart2,
-  Settings,
-  HelpCircle,
   Activity,
   Zap,
 } from "lucide-react";
@@ -19,14 +16,14 @@ import {
 const reports = {
   lifewood: {
     id: "lifewood",
-    title: "Lifewood Analytics Report",
+    title: "Lifewood & BYU Analytics",
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiM2NjYTFiYWQtOTUxNi00N2QxLWE1NjYtNDQ4NzJjZDRmZDZjIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true",
   },
   byu: {
     id: "byu",
-    title: "BYU Partnership Report",
-    icon: GraduationCap,
+    title: "BYU Partnership Project",
+    icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiMzI3NDkxYTktNmJkMS00ZWE1LWJhMDUtYjMzZDc0M2Q0ZmQ1IiwidCI6ImEwNWVlYjE3LWVmNzUtNDEwNi05NzdhLTgzZTM5OTMxOTQ3ZCIsImMiOjEwfQ%3D%3D",
   },
 };
@@ -76,8 +73,8 @@ const PowerBIDashboard = () => {
         <h2 className="text-xs font-bold text-forest-700 uppercase tracking-widest mb-4 animate-fade-in-up animation-delay-100">
           Active Reports
         </h2>
-        <ReportSwitcherButton reportId="lifewood" label="Lifewood Analytics" icon={Leaf} />
-        <ReportSwitcherButton reportId="byu" label="BYU Partnership" icon={GraduationCap} />
+        <ReportSwitcherButton reportId="lifewood" label="Lifewood & BYU Report" icon={Leaf} />
+        <ReportSwitcherButton reportId="byu" label="BYU Partnership Project" icon={Leaf} />
       </nav>
 
       
