@@ -32,6 +32,12 @@ const reports = {
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiYWQzN2Y3MDItOGUxNy00MTJmLWIxZmUtYTBkMGI3MTdmM2I3IiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
   },
+  philippinesproject: {
+    id: "philippinesproject",
+    title: "Philippines Project Analytics",
+    icon: Leaf,
+    src: "https://app.powerbi.com/view?r=eyJrIjoiNTcyZjNjNmUtMjE1OC00MjAyLTgzYmQtMjZiMTE3ZTJjMTMwIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=ac824aa0d6ac101d9e03",
+  },
 };
 
 // --- Enhanced Data for Stat Cards ---
@@ -82,6 +88,7 @@ const PowerBIDashboard = () => {
         <ReportSwitcherButton reportId="lifewood" label="Lifewood & BYU Report" icon={Leaf} />
         <ReportSwitcherButton reportId="byu" label="South Africa Project" icon={Leaf} />
         <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
+        <ReportSwitcherButton reportId="philippinesproject" label="Philippines Project" icon={Leaf} />
       </nav>
 
       
