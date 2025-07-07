@@ -22,9 +22,15 @@ const reports = {
   },
   byu: {
     id: "byu",
-    title: "BYU Partnership Project",
+    title: "South Africa Project Analytics",
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiMzI3NDkxYTktNmJkMS00ZWE1LWJhMDUtYjMzZDc0M2Q0ZmQ1IiwidCI6ImEwNWVlYjE3LWVmNzUtNDEwNi05NzdhLTgzZTM5OTMxOTQ3ZCIsImMiOjEwfQ%3D%3D",
+  },
+  nigeriaproject: {
+    id: "nigeriaproject",
+    title: "Nigeria Project Analytics",
+    icon: Leaf,
+    src: "https://app.powerbi.com/view?r=eyJrIjoiYWQzN2Y3MDItOGUxNy00MTJmLWIxZmUtYTBkMGI3MTdmM2I3IiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
   },
 };
 
@@ -74,7 +80,8 @@ const PowerBIDashboard = () => {
           Active Reports
         </h2>
         <ReportSwitcherButton reportId="lifewood" label="Lifewood & BYU Report" icon={Leaf} />
-        <ReportSwitcherButton reportId="byu" label="BYU Partnership Project" icon={Leaf} />
+        <ReportSwitcherButton reportId="byu" label="South Africa Project" icon={Leaf} />
+        <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
       </nav>
 
       
