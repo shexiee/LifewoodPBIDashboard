@@ -18,7 +18,7 @@ const reports = {
     id: "lifewood",
     title: "Lifewood & BYU Analytics",
     icon: Leaf,
-    src: "https://app.powerbi.com/view?r=eyJrIjoiM2NjYTFiYWQtOTUxNi00N2QxLWE1NjYtNDQ4NzJjZDRmZDZjIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&embedImagePlaceholder=true",
+    src: "https://app.powerbi.com/view?r=eyJrIjoiM2NjYTFiYWQtOTUxNi00N2QxLWE1NjYtNDQ4NzJjZDRmZDZjIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=3c50a3e055b2b0066090",
   },
   byu: {
     id: "byu",
