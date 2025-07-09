@@ -54,7 +54,7 @@ const reports = {
     id: "madagascarproject",
     title: "Madagascar Project Analytics",
     icon: Leaf,
-    src: "https://app.powerbi.com/view?r=eyJrIjoiNjQ0OWUxZGItNGM2Ni00M2U4LThlMzUtNDc4YTg5NGFkYzAyIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
+    src: "https://app.powerbi.com/view?r=eyJrIjoiNjQ0OWUxZGItNGM2Ni00M2U4LThlMzUtNDc4YTg5NGFkYzAyIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=58ca9529325a149630c0",
   },
 };
 
