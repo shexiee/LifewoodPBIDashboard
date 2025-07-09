@@ -85,7 +85,7 @@ const PowerBIDashboard = () => {
   const Sidebar = () => (
     <aside className="fixed inset-y-0 left-0 w-80 bg-gradient-to-b from-forest-950 via-forest-900 to-forest-950 backdrop-blur-lg border-r border-forest-800/50 p-6 flex flex-col z-10 shadow-2xl">
       {/* Enhanced Header with gradient background */}
-      <div className="flex items-center space-x-4 mb-12 animate-fade-in-up">
+      <div className="flex items-center space-x-4 mb-12 animate-fade-in-up flex-shrink-0">
         <div className="relative w-14 h-14 bg-gradient-to-br from-amber-800 via-amber-900 to-amber-950 flex items-center justify-center rounded-2xl shadow-glow animate-pulse-glow">
           <BarChart2 className="w-7 h-7 text-neutral-50" />
           <div className="absolute inset-0 bg-gradient-to-br from-amber-700/20 to-transparent rounded-2xl"></div>
@@ -98,27 +98,56 @@ const PowerBIDashboard = () => {
         </div>
       </div>
 
-      {/* Enhanced Report Switcher */}
-      <nav className="flex flex-col space-y-3 mb-12">
-        <h2 className="text-xs font-bold text-forest-700 uppercase tracking-widest mb-4 animate-fade-in-up animation-delay-100">
+      {/* Enhanced Report Switcher - subtle scroll */}
+      <nav className="flex-1 min-h-0 flex flex-col">
+        <h2 className="text-xs font-bold text-forest-700 uppercase tracking-widest mb-4 animate-fade-in-up animation-delay-100 flex-shrink-0">
           Active Reports
         </h2>
-        <ReportSwitcherButton reportId="lifewood" label="Lifewood & BYU Report" icon={Leaf} />
-        <ReportSwitcherButton reportId="byu" label="South Africa Project" icon={Leaf} />
-        <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
-        <ReportSwitcherButton reportId="philippinesproject" label="Philippines Project" icon={Leaf} />
-        <ReportSwitcherButton reportId="ghanaproject" label="Ghana Project" icon={Leaf} />
-        <ReportSwitcherButton reportId="congoproject" label="Congo Project" icon={Leaf} />
-        <ReportSwitcherButton reportId="madagascarproject" label="Madagascar Project" icon={Leaf} />
+        <div
+          className="flex-1 min-h-0 overflow-y-auto pr-2 space-y-3 sidebar-scroll"
+          style={{
+            scrollbarWidth: "thin",
+            scrollbarColor: "#a16207 #78350f",
+          }}
+        >
+          <style>
+            {`
+              .sidebar-scroll::-webkit-scrollbar {
+                width: 7px;
+                background: transparent;
+              }
+              .sidebar-scroll::-webkit-scrollbar-thumb {
+                background: linear-gradient(135deg, #a16207 0%, #78350f 50%, #3b1d0f 100%);
+                border-radius: 8px;
+                min-height: 24px;
+              }
+              .sidebar-scroll::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(135deg, #f59e42 0%, #a16207 60%, #78350f 100%);
+              }
+              .sidebar-scroll::-webkit-scrollbar-track {
+                background: transparent;
+              }
+            `}
+          </style>
+          <div>
+            <ReportSwitcherButton reportId="lifewood" label="Lifewood BYU Report" icon={Leaf} />
+            <ReportSwitcherButton reportId="byu" label="South Africa Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="philippinesproject" label="Philippines Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="ghanaproject" label="Ghana Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="congoproject" label="Congo Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="madagascarproject" label="Madagascar Project" icon={Leaf} />
+          </div>
+        </div>
       </nav>
 
-      
-        
-        {/* Status indicator */}
-        <div className="flex items-center space-x-3 text-forest-600 pt-4">
+      {/* Status indicator - sticky to bottom */}
+      <div className="pt-4 mt-8 flex-shrink-0">
+        <div className="flex items-center space-x-3 text-forest-600">
           <div className="w-2 h-2 bg-amber-800 rounded-full animate-pulse"></div>
           <span className="text-xs font-medium">System Operational</span>
         </div>
+      </div>
     </aside>
   );
 
