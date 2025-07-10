@@ -56,6 +56,12 @@ const reports = {
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiNjQ0OWUxZGItNGM2Ni00M2U4LThlMzUtNDc4YTg5NGFkYzAyIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=58ca9529325a149630c0",
   },
+  ivorycoastproject: {
+    id: "ivorycoastproject",
+    title: "Ivory Coast Project Analytics",
+    icon: Leaf,
+    src: "https://app.powerbi.com/view?r=eyJrIjoiYjRiMzBiZmMtZjIzYS00NzEwLWI3NjgtODM0NWNlMDY5YTY2IiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=4a8123e02212d6991795",
+  },
 };
 
 // --- Enhanced Data for Stat Cards ---
@@ -137,6 +143,7 @@ const PowerBIDashboard = () => {
             <ReportSwitcherButton reportId="ghanaproject" label="Ghana Project" icon={Leaf} />
             <ReportSwitcherButton reportId="congoproject" label="Congo Project" icon={Leaf} />
             <ReportSwitcherButton reportId="madagascarproject" label="Madagascar Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="ivorycoastproject" label="Ivory Coast Project" icon={Leaf} />
           </div>
         </div>
       </nav>
