@@ -20,8 +20,14 @@ const reports = {
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiM2NjYTFiYWQtOTUxNi00N2QxLWE1NjYtNDQ4NzJjZDRmZDZjIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=3c50a3e055b2b0066090",
   },
-  byu: {
-    id: "byu",
+  philippinesproject: {
+    id: "philippinesproject",
+    title: "Philippines Project Analytics",
+    icon: Leaf,
+    src: "https://app.powerbi.com/view?r=eyJrIjoiNTcyZjNjNmUtMjE1OC00MjAyLTgzYmQtMjZiMTE3ZTJjMTMwIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=ac824aa0d6ac101d9e03",
+  },
+  southafricaproject: {
+    id: "southafricaproject",
     title: "South Africa Project Analytics",
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiMzI3NDkxYTktNmJkMS00ZWE1LWJhMDUtYjMzZDc0M2Q0ZmQ1IiwidCI6ImEwNWVlYjE3LWVmNzUtNDEwNi05NzdhLTgzZTM5OTMxOTQ3ZCIsImMiOjEwfQ%3D%3D",
@@ -31,12 +37,6 @@ const reports = {
     title: "Nigeria Project Analytics",
     icon: Leaf,
     src: "https://app.powerbi.com/view?r=eyJrIjoiYWQzN2Y3MDItOGUxNy00MTJmLWIxZmUtYTBkMGI3MTdmM2I3IiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=69ad161c98e3e55b5edc",
-  },
-  philippinesproject: {
-    id: "philippinesproject",
-    title: "Philippines Project Analytics",
-    icon: Leaf,
-    src: "https://app.powerbi.com/view?r=eyJrIjoiNTcyZjNjNmUtMjE1OC00MjAyLTgzYmQtMjZiMTE3ZTJjMTMwIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=ac824aa0d6ac101d9e03",
   },
   ghanaproject: {
     id: "ghanaproject",
@@ -155,9 +155,9 @@ const PowerBIDashboard = () => {
           </style>
           <div>
             <ReportSwitcherButton reportId="lifewood" label="Lifewood BYU Report" icon={Leaf} />
-            <ReportSwitcherButton reportId="byu" label="South Africa Project" icon={Leaf} />
-            <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
             <ReportSwitcherButton reportId="philippinesproject" label="Philippines Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="southafricaproject" label="South Africa Project" icon={Leaf} />
             <ReportSwitcherButton reportId="ghanaproject" label="Ghana Project" icon={Leaf} />
             <ReportSwitcherButton reportId="congoproject" label="Congo Project" icon={Leaf} />
             <ReportSwitcherButton reportId="madagascarproject" label="Madagascar Project" icon={Leaf} />
