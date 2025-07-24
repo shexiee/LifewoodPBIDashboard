@@ -27,11 +27,15 @@ const reports = {
     src: "https://app.powerbi.com/view?r=eyJrIjoiNTcyZjNjNmUtMjE1OC00MjAyLTgzYmQtMjZiMTE3ZTJjMTMwIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D&pageName=ac824aa0d6ac101d9e03",
   },
   southafricaproject: {
-    id: "southafricaproject",
-    title: "South Africa Project Analytics",
-    icon: Leaf,
-    src: "https://app.powerbi.com/view?r=eyJrIjoiNzhjYzE5NTktMzE0My00MGNjLTk3OWMtNDliZjZmNGNkN2ExIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
+  id: "southafricaproject",
+  title: "South Africa Project Analytics",
+  icon: Leaf,
+  src: [
+    "https://app.powerbi.com/view?r=eyJrIjoiNzhjYzE5NTktMzE0My00MGNjLTk3OWMtNDliZjZmNGNkN2ExIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
+    "https://app.powerbi.com/view?r=eyJrIjoiNzNjZDJjN2ItZTliYS00NDBmLWEwYzUtNGMyNmM0ZThhMDVmIiwidCI6ImEwNWVlYjE3LWVmNzUtNDEwNi05NzdhLTgzZTM5OTMxOTQ3ZCIsImMiOjEwfQ%3D%3D"
+    ],
   },
+
   nigeriaproject: {
     id: "nigeriaproject",
     title: "Nigeria Project Analytics",
@@ -245,63 +249,85 @@ const PowerBIDashboard = () => {
 
   // --- Enhanced ReportCard Component ---
   const ReportCard = ({ reportData, hasError, onError, onFullscreen, iframeRef }) => {
-    const { title, src } = reportData;
-    return (
-      <div className="h-full w-full bg-gradient-to-br from-forest-950 via-forest-900 to-forest-950 rounded-3xl shadow-2xl border border-forest-800/50 overflow-hidden flex flex-col backdrop-blur-sm">
-        {/* Enhanced Card Header */}
-        <div className="flex items-center justify-between p-6 border-b border-forest-800/30 flex-shrink-0 bg-gradient-to-r from-forest-950/80 to-forest-900/80 backdrop-blur-sm">
-          <div className="flex items-center space-x-4">
-            <div className="w-3 h-3 bg-amber-800 rounded-full animate-pulse shadow-glow"></div>
-            <h3 className="text-2xl font-bold" style={{ color: '#133020' }}>
-              {title}
-            </h3>
-          </div>
-          <button
-            onClick={onFullscreen}
-            className="group relative bg-gradient-to-r from-amber-950 to-amber-900 hover:from-amber-900 hover:to-amber-800 text-neutral-50 px-4 py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center space-x-3 overflow-hidden font-semibold"
-          >
-            {/* Enhanced shine effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neutral-50/20 to-transparent transform -skew-x-12 transition-transform duration-700 group-hover:translate-x-full -translate-x-full"/>
+  const [iframeIndex, setIframeIndex] = useState(0);
+  const sourceList = Array.isArray(reportData.src) ? reportData.src : [reportData.src];
 
-            <Expand className="w-5 h-5 relative z-10" />
-            <span className="text-sm relative z-10">Fullscreen View</span>
-          </button>
+  return (
+    <div className="h-full w-full bg-gradient-to-br from-forest-950 via-forest-900 to-forest-950 rounded-3xl shadow-2xl border border-forest-800/50 overflow-hidden flex flex-col backdrop-blur-sm">
+      
+      {/* Header */}
+      <div className="flex items-center justify-between p-6 border-b border-forest-800/30 flex-shrink-0 bg-gradient-to-r from-forest-950/80 to-forest-900/80 backdrop-blur-sm">
+        <div className="flex items-center space-x-4">
+          <div className="w-3 h-3 bg-amber-800 rounded-full animate-pulse shadow-glow"></div>
+          <h3 className="text-2xl font-bold" style={{ color: '#133020' }}>
+            {reportData.title}
+          </h3>
         </div>
+        <button
+          onClick={onFullscreen}
+          className="group relative bg-gradient-to-r from-amber-950 to-amber-900 hover:from-amber-900 hover:to-amber-800 text-neutral-50 px-4 py-3 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-glow flex items-center space-x-3 overflow-hidden font-semibold"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-neutral-50/20 to-transparent transform -skew-x-12 transition-transform duration-700 group-hover:translate-x-full -translate-x-full"/>
+          <Expand className="w-5 h-5 relative z-10" />
+          <span className="text-sm relative z-10">Fullscreen View</span>
+        </button>
+      </div>
 
-        {/* Enhanced Iframe container */}
-        <div className="relative h-full w-full bg-gradient-to-br from-forest-950 to-neutral-900/20">
-          {hasError && (
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-950/30 via-amber-900/20 to-forest-950/30 backdrop-blur-sm flex items-center justify-center z-20 text-center">
-              <div className="flex flex-col items-center space-y-6 p-8 bg-gradient-to-br from-amber-950/20 to-forest-950/40 rounded-2xl border border-amber-900/30 backdrop-blur-sm max-w-md">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-900 to-amber-950 rounded-2xl flex items-center justify-center shadow-glow">
-                  <AlertTriangle className="w-8 h-8 text-amber-700" />
-                </div>
-                <div className="text-xl font-bold text-neutral-50">Connection Issue</div>
-                <div className="text-forest-600 text-center leading-relaxed">
-                  Unable to load the Power BI report. Please check your network connection and refresh the page.
-                </div>
+      {/* Optional view toggle */}
+      {sourceList.length > 1 && (
+        <div className="flex space-x-2 px-3 py-2 border-b border-forest-800/30 bg-forest-950/80">
+          {sourceList.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setIframeIndex(index)}
+              className={`px-3 py-1.5 rounded-md text-xs font-semibold tracking-wide ${
+                index === iframeIndex
+                  ? "bg-amber-800 text-white"
+                  : "bg-forest-800 text-forest-300 hover:bg-forest-700"
+              }`}
+            >
+              Report {index + 1}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Main iframe container */}
+      <div className="relative flex-grow w-full bg-gradient-to-br from-forest-950 to-neutral-900/20">
+        {hasError && (
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-950/30 via-amber-900/20 to-forest-950/30 backdrop-blur-sm flex items-center justify-center z-20 text-center">
+            <div className="flex flex-col items-center space-y-6 p-8 bg-gradient-to-br from-amber-950/20 to-forest-950/40 rounded-2xl border border-amber-900/30 backdrop-blur-sm max-w-md">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-900 to-amber-950 rounded-2xl flex items-center justify-center shadow-glow">
+                <AlertTriangle className="w-8 h-8 text-amber-700" />
+              </div>
+              <div className="text-xl font-bold text-neutral-50">Connection Issue</div>
+              <div className="text-forest-600 text-center leading-relaxed">
+                Unable to load the Power BI report. Please check your network connection and refresh the page.
               </div>
             </div>
-          )}
-          <iframe
-            key={reportData.id}
-            ref={iframeRef}
-            src={src}
-            className="w-full h-full border-none transition-all duration-700 rounded-b-3xl"
-            style={{ opacity: hasError ? 0 : 1 }}
-            allowFullScreen
-            onError={onError}
-          />
-        </div>
+          </div>
+        )}
+
+        <iframe
+          key={`${reportData.id}-${iframeIndex}`}
+          ref={iframeRef}
+          src={sourceList[iframeIndex]}
+          className="w-full h-full border-none transition-all duration-700 rounded-b-3xl"
+          style={{ opacity: hasError ? 0 : 1 }}
+          allowFullScreen
+          onError={onError}
+        />
       </div>
-    );
-  };
+    </div>
+  );
+};
+
   
   return (
     <div className="min-h-screen w-full flex bg-gradient-to-br from-forest-950 via-neutral-900/10 to-forest-950">
       <Sidebar />
-      <main className="ml-80 p-8 w-full h-screen animate-fade-in-up flex flex-col">
-        <div className="flex-1 mb-6">
+      <main className="ml-80 pt-4 pb-1 px-3 w-full min-h-0 flex flex-col flex-grow space-y-2">
+        <div className="flex-grow flex flex-col">
           <ReportCard
             reportData={reports[activeReport]}
             hasError={errors[activeReport]}
@@ -310,12 +336,12 @@ const PowerBIDashboard = () => {
             iframeRef={iframeRef}
           />
         </div>
-        <footer className="text-center text-forest-700 font-medium">
-          <div className="flex items-center justify-center space-x-2 text-sm">
+        <footer className="text-center text-forest-600 text-xs py-1">
+          <div className="flex items-center justify-center space-x-1">
             <span>© {new Date().getFullYear()}</span>
-            <div className="w-1 h-1 bg-amber-800 rounded-full"></div>
-            <span>Lifewood + BYU Analytics Platform</span>
-            <div className="w-1 h-1 bg-amber-800 rounded-full"></div>
+            <span className="w-1 h-1 bg-amber-500 rounded-full"></span>
+            <span>Lifewood + BYU Analytics</span>
+            <span className="w-1 h-1 bg-amber-500 rounded-full"></span>
             <span>All Rights Reserved</span>
           </div>
         </footer>
