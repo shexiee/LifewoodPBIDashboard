@@ -30,7 +30,7 @@ const reports = {
     id: "southafricaproject",
     title: "South Africa Project Analytics",
     icon: Leaf,
-    src: "https://app.powerbi.com/view?r=eyJrIjoiMzI3NDkxYTktNmJkMS00ZWE1LWJhMDUtYjMzZDc0M2Q0ZmQ1IiwidCI6ImEwNWVlYjE3LWVmNzUtNDEwNi05NzdhLTgzZTM5OTMxOTQ3ZCIsImMiOjEwfQ%3D%3D",
+    src: "https://app.powerbi.com/view?r=eyJrIjoiNzhjYzE5NTktMzE0My00MGNjLTk3OWMtNDliZjZmNGNkN2ExIiwidCI6IjgyM2NkZTQ0LTQ0MzMtNDU2ZC1iODAxLWJkZjBhYjNkNDFmYyIsImMiOjEwfQ%3D%3D",
   },
   nigeriaproject: {
     id: "nigeriaproject",
