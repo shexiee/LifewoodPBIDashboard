@@ -160,13 +160,13 @@ const PowerBIDashboard = () => {
           <div>
             <ReportSwitcherButton reportId="lifewood" label="Lifewood BYU Report" icon={Leaf} />
             <ReportSwitcherButton reportId="philippinesproject" label="Philippines Project" icon={Leaf} />
-            <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
             <ReportSwitcherButton reportId="southafricaproject" label="South Africa Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="nigeriaproject" label="Nigeria Project" icon={Leaf} />
             <ReportSwitcherButton reportId="ghanaproject" label="Ghana Project" icon={Leaf} />
             <ReportSwitcherButton reportId="congoproject" label="Congo Project" icon={Leaf} />
             <ReportSwitcherButton reportId="madagascarproject" label="Madagascar Project" icon={Leaf} />
-            <ReportSwitcherButton reportId="ivorycoastproject" label="Ivory Coast Project" icon={Leaf} />
             <ReportSwitcherButton reportId="beninproject" label="Benin Project" icon={Leaf} />
+            <ReportSwitcherButton reportId="ivorycoastproject" label="Ivory Coast Project" icon={Leaf} />
             <ReportSwitcherButton reportId="ugandaproject" label="Uganda Project" icon={Leaf} />
             <ReportSwitcherButton reportId="kenyaproject" label="Kenya Project" icon={Leaf} />
           </div>
